@@ -1,6 +1,7 @@
 import { TbViewfinder } from "react-icons/tb";
 import axios from "axios";
 import { useState } from "react";
+import UpcomingDay from "./components/UpcomingDay";
 
 const daysOfWeek = [
   "Sunday",
@@ -71,31 +72,11 @@ function App() {
       </div>
 
       <div className="forecast">
-        <div className="day">
-          <h1>Uterý</h1>
-          <p>22°C</p>
-          <p>50%</p>
-        </div>
-        <div className="day">
-          <h1>Středa</h1>
-          <p>22°C</p>
-          <p>50%</p>
-        </div>
-        <div className="day">
-          <h1>Čtvrtek</h1>
-          <p>22°C</p>
-          <p>50%</p>
-        </div>
-        <div className="day">
-          <h1>Pátek</h1>
-          <p>22°C</p>
-          <p>50%</p>
-        </div>
-        <div className="day">
-          <h1>Sobota</h1>
-          <p>22°C</p>
-          <p>50%</p>
-        </div>
+        <UpcomingDay />
+        <UpcomingDay />
+        <UpcomingDay />
+        <UpcomingDay />
+        <UpcomingDay />
       </div>
       <div className="footer">
         <p>Footer</p>
