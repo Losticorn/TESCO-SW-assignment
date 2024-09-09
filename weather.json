@@ -1,0 +1,33 @@
+{
+  "coord": { "lon": 17.2518, "lat": 49.5955 },
+  "weather": [
+    { "id": 501, "main": "Rain", "description": "moderate rain", "icon": "10d" }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 288.72,
+    "feels_like": 288.71,
+    "temp_min": 287.79,
+    "temp_max": 289.24,
+    "pressure": 1006,
+    "humidity": 91,
+    "sea_level": 1006,
+    "grnd_level": 978
+  },
+  "visibility": 10000,
+  "wind": { "speed": 2.17, "deg": 303, "gust": 5.28 },
+  "rain": { "1h": 3.55 },
+  "clouds": { "all": 100 },
+  "dt": 1725894973,
+  "sys": {
+    "type": 2,
+    "id": 2008357,
+    "country": "CZ",
+    "sunrise": 1725855530,
+    "sunset": 1725902281
+  },
+  "timezone": 7200,
+  "id": 3069011,
+  "name": "Olomouc",
+  "cod": 200
+}

@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+body{
+  background-image: url(../public/background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-inline: 0.5rem;
+}
+
+.inputarea{
+  display: flex;
+  margin: 5rem;
+  padding: 0.3rem;
+  border-radius: 1rem;
+  gap: 1rem;
+  background-color: rgba(0, 0, 0, 0.582);
+}
+
+.inputarea input{
+  border: 1px solid black;
+  border-radius: 1rem;
+  color: black;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+::placeholder{
+  text-align: center;
+}
+
+.search{
+  color: black;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.findme{
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+
+.findme:hover{
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 2rem;
+  gap: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.582);
+}
+
+.details{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.forecast{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4rem;
+  width: 100%;
+  margin-top: 8rem;
+}
+
+.day{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-width: 200px;
+  min-height: 250px;
+  background-color: rgba(0, 0, 0, 0.582);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.footer{
+  display: block;
+  position: absolute;
+  bottom: 0.5rem;
+  background-color: red;
+  text-align: center;
+  width: auto;
+}
