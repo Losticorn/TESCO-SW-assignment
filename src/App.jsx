@@ -2,6 +2,7 @@ import { TbViewfinder } from "react-icons/tb";
 import axios from "axios";
 import { useState } from "react";
 import UpcomingDay from "./components/UpcomingDay";
+import Forecast from "./components/Forecast";
 
 const daysOfWeek = [
   "Sunday",
@@ -19,11 +20,22 @@ function App() {
 
   const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${position}&appid=${apiKey}&units=metric`;
+  const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${position}&appid=${apiKey}&units=metric`;
+  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${position}&appid=${apiKey}`;
 
   function findPlace(event) {
+    if (event.key === "Enter" || event.type === "click") {
+      axios.get(currentWeatherUrl).then((response) => {
+        setForecast(response.data);
+        console.log(response.data);
+      });
+      setPosition("");
+    }
+  }
+
+  function getForecast(event) {
     if (event.key === "Enter") {
-      axios.get(url).then((response) => {
+      axios.get(currentWeatherUrl).then((response) => {
         setForecast(response.data);
         console.log(response.data);
       });
@@ -44,7 +56,9 @@ function App() {
           type="text"
           placeholder="Zadejte místo"
         ></input>
-        <button className="search">Hledat</button>
+        <button onClick={findPlace} className="search">
+          Hledat
+        </button>
         <button className="findme">
           <TbViewfinder size={50} />
         </button>
@@ -70,14 +84,7 @@ function App() {
           </div>
         </div>
       </div>
-
-      <div className="forecast">
-        <UpcomingDay />
-        <UpcomingDay />
-        <UpcomingDay />
-        <UpcomingDay />
-        <UpcomingDay />
-      </div>
+      <Forecast />
       <div className="footer">
         <p>Footer</p>
       </div>
