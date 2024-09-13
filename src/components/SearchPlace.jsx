@@ -137,7 +137,7 @@ export default function SearchPlace() {
         <button type="submit" className="search">
           Hledat
         </button>
-        <button type="submit" onClick={handleGeolocation} className="findme">
+        <button onClick={handleGeolocation} className="findme">
           <TbViewfinder color="white" size={50} />
         </button>
       </form>
