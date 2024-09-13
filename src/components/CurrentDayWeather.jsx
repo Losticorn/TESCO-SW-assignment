@@ -1,4 +1,12 @@
-export default function CurrentDayWeather({ currentWeather, currentDay }) {
+import { useSearchContext } from "../providers/SearchProvider";
+import getCurrentDay from "../utils/getCurrentDay";
+
+export default function CurrentDayWeather() {
+  const currentDay = getCurrentDay();
+  const { currentWeather } = useSearchContext();
+
+  if (!currentWeather) return null;
+
   return (
     <div className="currentweather">
       <div>

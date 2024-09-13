@@ -1,14 +1,6 @@
 *{
   margin: 0;
   padding: 0;
-  color: white;
-}
-
-body{
-  background-image: url(../public/background.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .main{
@@ -16,27 +8,74 @@ body{
   flex-direction: column;
   align-items: center;
   margin-inline: 0.5rem;
+  background: linear-gradient(#72b6ee, white);
+  margin: 0;
+  padding: 0;
 }
 
-.inputarea{
+.wrapper{
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.582);
   margin: 5rem;
   padding: 0.3rem;
   border-radius: 1rem;
   gap: 1rem;
-  background-color: rgba(0, 0, 0, 0.582);
 }
 
-.inputarea input{
+.search-place-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.input-wrapper input{
   border: 1px solid black;
   border-radius: 1rem;
   color: black;
   text-align: center;
   font-size: 1.5rem;
+  height: 100%;
+  width: 300px;
 }
 
 ::placeholder{
   text-align: center;
+}
+
+.list{
+  border: 1px solid #ccc;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  background-color: white;
+  width: 300px;
+  max-height: 180px;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  font-size: 1.2rem;
+  overflow-y: auto;
+}
+
+.filtered-option{
+  padding: 8px;
+}
+
+.filtered-option:hover{
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.active{
+  background-color: #ddd;
+  cursor: pointer;
+  padding: 8px;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }
 
 .search{
@@ -59,42 +98,58 @@ body{
   border-radius: 2rem;
 }
 
-.top{
+.currentweather{
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
+  position: static;
   font-size: 2rem;
-  gap: 2rem;
+  gap: 4rem;
   padding: 1rem;
+  border: 3px solid white;
   border-radius: 1rem;
-  background-color: rgba(0, 0, 0, 0.582);
+  background-color: transparent;
+  color: black;
+  box-shadow: inset 1px 1px 10px white;
 }
 
 .details{
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
 .forecast{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 4rem;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin-top: 8rem;
+  
 }
 
-.day{
+.forecast-table{
+  color: black;
   display: flex;
   flex-direction: column;
+ 
   align-items: center;
   gap: 2rem;
   min-width: 200px;
-  min-height: 250px;
-  background-color: rgba(0, 0, 0, 0.582);
   padding: 1rem;
   border-radius: 1rem;
+  background: linear-gradient(#C3E0F8,#72b6ee);
+}
+
+.forecast-table th{
+  font-size: 2rem;
+}
+
+.temperature{
+  font-size: 1.7rem;
 }
 
 .footer{
@@ -104,4 +159,25 @@ body{
   background-color: red;
   text-align: center;
   width: auto;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(189, 189, 189);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
