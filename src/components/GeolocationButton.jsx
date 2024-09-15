@@ -5,7 +5,6 @@ import { TbViewfinder } from "react-icons/tb";
 export default function GeolocationButton() {
   const { findPlace } = useSearchContext();
   const myLocation = useGeolocation();
-  console.log(myLocation);
 
   return (
     <button

@@ -1,15 +1,15 @@
 import { useSearchContext } from "../providers/SearchProvider";
+import React from "react";
 
 export default function Forecast() {
   const { fiveDayForecast } = useSearchContext();
-  console.log(fiveDayForecast);
 
   if (!fiveDayForecast) return null;
 
   return (
     <table className="forecast">
       {fiveDayForecast.map((item) => (
-        <div className="forecast-table" key={item.day}>
+        <tbody className="forecast-table" key={item.day}>
           <tr>
             <th className="forecast-day">{item.day}</th>
           </tr>
@@ -37,7 +37,7 @@ export default function Forecast() {
               </tr>
             );
           })}
-        </div>
+        </tbody>
       ))}
     </table>
   );

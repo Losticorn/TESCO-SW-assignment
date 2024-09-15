@@ -21,7 +21,6 @@ export default function SearchProvider({ children }) {
     try {
       await axios.get(currentWeatherUrl).then((response) => {
         setCurrentWeather(response.data);
-        console.log("Current Weather:", response.data);
       });
     } catch (error) {
       console.error("Error fetching current weather:", error);
@@ -29,7 +28,6 @@ export default function SearchProvider({ children }) {
     try {
       await axios.get(forecastUrl).then((response) => {
         setFiveDayForecast(modifyForecastData(response.data.list));
-        console.log("Five Day Forecast:", response.data);
       });
     } catch (error) {
       console.error("Error fetching forecast:", error);
