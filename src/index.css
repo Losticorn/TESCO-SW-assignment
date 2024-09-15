@@ -37,11 +37,7 @@ body{
   background-color: #0a497ac2
 }
 
-@media (max-width: 1260px){
-  .wrapper{
-    margin-top: 0.5rem;
-  }
-}
+
 
 .search-place-wrapper{
   display: flex;
@@ -147,11 +143,7 @@ body{
   background-color: #0a497ac2;
 }
 
-@media (max-width: 1260px){
-  .currentweather{
-    flex-direction: column;
-  }
-}
+
 
 .details{
   display: flex;
@@ -161,11 +153,7 @@ body{
   gap: 3rem;
 }
 
-@media (max-width: 1260px){
-  .details{
-    justify-content: center;
-  }
-}
+
 
 .current-day{
   font-size: 1.5rem;
@@ -200,31 +188,10 @@ body{
   background-color: #0a497ac2;
 }
 
-@media (max-width: 1260px){
-  .forecast-table{
-    justify-content: center;
-    text-align: center;
-    gap: 0rem;
-    padding: 0rem 1rem;
-
-  }
-
-  .forecast-table th{
-    text-align: center;
-  }
-}
-
 .forecast-day{
   font-size: 2rem;
   min-width: 10rem;
   text-align: left;
-}
-
-@media (max-width: 1260px){
-  .forecast-day{
-    padding-top: 1rem;
-    font-size: 3rem;
-  }
 }
 
 .forecast-details{
@@ -241,12 +208,6 @@ body{
   box-shadow: inset 1px 1px 10px black;
 }
 
-@media (max-width: 1260px){
-  .forecast-details{
-    margin-top: 1rem;
-  }
-}
-
 .temperature-wrapper{
   display: flex;
   flex-direction: column;
@@ -259,15 +220,6 @@ body{
 
 .temperature-min{
   font-size: 1.4rem;
-}
-
-@media (max-width: 1260px){
-  .temperature-wrapper{
-    width: 100%;
-  }
-  .temperature-max{
-    font-size: 3rem;
-  }
 }
 
 .interval{
@@ -295,23 +247,54 @@ body{
   width: auto;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: rgb(189, 189, 189);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: black;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media (max-width: 1260px){
+  .wrapper{
+    margin-top: 0.5rem;
+  }
+  .currentweather{
+    flex-direction: column;
+  }
+  .details{
+    justify-content: center;
+  }
+  .forecast-table{
+    justify-content: center;
+    text-align: center;
+    gap: 0rem;
+    padding: 0rem 1rem;
+
+  }
+  .forecast-table th{
+    text-align: center;
+  }
+  .forecast-day{
+    padding-top: 1rem;
+    font-size: 3rem;
+  }
+  .forecast-details{
+    margin-top: 1rem;
+  }
+  .temperature-wrapper{
+    width: 100%;
+  }
+  .temperature-max{
+    font-size: 3rem;
+  }
 }
