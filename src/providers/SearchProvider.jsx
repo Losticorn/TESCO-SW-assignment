@@ -1,24 +1,23 @@
 import { useState, useContext, createContext } from "react";
 import useUserLanguage from "../hooks/useUserLanguage";
 import axios from "axios";
+import modifyForecastData from "../utils/modifyForecastData";
 
 const SearchContext = createContext(undefined);
 
 const apiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
 const weatherApi = "https://api.openweathermap.org/data/2.5";
-const forecastCount = 5;
 const units = "metric";
 
 export default function SearchProvider({ children }) {
   const [currentWeather, setCurrentWeather] = useState(null);
-
-  const [fiveDayForecast, setFiveDayForecast] = useState(null);
+  const [fiveDayForecast, setFiveDayForecast] = useState([]);
   const language = useUserLanguage();
 
   async function findPlace({ lat, lon }) {
     const currentWeatherUrl = `${weatherApi}/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}&lang=${language}`;
 
-    const forecastUrl = `${weatherApi}/forecast?lat=${lat}&lon=${lon}&cnt=${forecastCount}&appid=${apiKey}&units=${units}&lang=${language}`;
+    const forecastUrl = `${weatherApi}/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}&lang=${language}`;
     try {
       await axios.get(currentWeatherUrl).then((response) => {
         setCurrentWeather(response.data);
@@ -29,7 +28,7 @@ export default function SearchProvider({ children }) {
     }
     try {
       await axios.get(forecastUrl).then((response) => {
-        setFiveDayForecast(response.data);
+        setFiveDayForecast(modifyForecastData(response.data.list));
         console.log("Five Day Forecast:", response.data);
       });
     } catch (error) {
