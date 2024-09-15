@@ -4,7 +4,7 @@ import Forecast from "./components/Forecast";
 
 function App() {
   return (
-    <main className="main">
+    <main className="layout">
       <SearchPlace />
       <CurrentDayWeather />
       <Forecast />

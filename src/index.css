@@ -8,7 +8,7 @@ body{
   background-color: #0a497ac2;
 }
 
-.main{
+.layout{
   display: flex;
   flex-direction: column;
   justify-content: center;

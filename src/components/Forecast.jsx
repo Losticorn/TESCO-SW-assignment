@@ -1,5 +1,4 @@
 import { useSearchContext } from "../providers/SearchProvider";
-import React from "react";
 
 export default function Forecast() {
   const { fiveDayForecast } = useSearchContext();

@@ -28,7 +28,7 @@ export default function CurrentDayWeather() {
           ) : null}
         </div>
         <div>
-          <p className="label">Viditelnosť</p>
+          <p className="label">Viditelnost</p>
           {currentWeather.main ? <p>{currentWeather.visibility}</p> : null}
         </div>
       </div>

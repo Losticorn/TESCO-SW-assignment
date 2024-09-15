@@ -5,7 +5,7 @@ export default function useUserLanguage() {
 
   useEffect(() => {
     const browserLanguage = navigator.language || navigator.userLanguage;
-    const adjustedLanguage = browserLanguage === "cs" ? "cz" : browserLanguage;
+    const adjustedLanguage = browserLanguage === "cs" ? "cz" : browserLanguage; //weather API is recognizing cz but browser returns cs
     setLanguage(adjustedLanguage);
   }, []);
 
